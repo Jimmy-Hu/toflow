@@ -6,12 +6,13 @@ output_root = ['.' filesep 'Output'];
 %   pkg load image
 
 %%  Visiting each sub-folder
-
-outer_loop_end = 10;
+outer_loop_start = 1;
+outer_loop_end = 2;
+inner_loop_start = 1;
 inner_loop_end = 1000;
 
-for outer_loop = 1:outer_loop_end
-    for inner_loop = 1:inner_loop_end
+for outer_loop = outer_loop_start:outer_loop_end
+    for inner_loop = inner_loop_start:inner_loop_end
         input_path = [input_root filesep sprintf('%05d', outer_loop) filesep sprintf('%04d', inner_loop)];
         if (~exist(input_path, 'dir'))
             continue;
