@@ -15,7 +15,7 @@ if ~exist(output_path, 'dir')
   mkdir(output_path);
 end
 for iimg = 1 : num_imgs
-  imwrite(img_list{iimg}, [output_path '/im' sprintf('%04d',iimg) '.png'])
+  imwrite(img_list{iimg}, [output_path filesep 'im' sprintf('%04d',iimg) '.png'])
 end
 
 end
