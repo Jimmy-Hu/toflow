@@ -7,8 +7,11 @@ output_root = ['.' filesep 'Output'];
 
 %%  Visiting each sub-folder
 
-for outer_loop = 1:1
-    for inner_loop = 1:1
+outer_loop_end = 10;
+inner_loop_end = 1000;
+
+for outer_loop = 1:outer_loop_end
+    for inner_loop = 1:inner_loop_end
         input_path = [input_root filesep sprintf('%05d', outer_loop) filesep sprintf('%04d', inner_loop)];
         if (~exist(input_path, 'dir'))
             continue;
